@@ -1,0 +1,581 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Explore the seasonal menu at Saffron & Stone, featuring fresh salads, handcrafted pasta, stone-baked pizza, and desserts.">
+
+    <title>Our Menu | Saffron & Stone</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* MENU PAGE */
+
+        .menu-intro {
+            padding: 55px 0 25px;
+        }
+
+        .menu-intro h1 {
+            font-size: clamp(2.8rem, 6vw, 4.5rem);
+            line-height: 1.1;
+            margin: 20px 0;
+        }
+
+        .menu-intro p {
+            line-height: 1.8;
+        }
+
+        .menu-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 30px 0 35px;
+        }
+
+        .menu-filter {
+            padding: 12px 22px;
+            border: 1px solid #e5ddd2;
+            border-radius: 30px;
+            background: transparent;
+            color: #203d32;
+            font: inherit;
+            cursor: pointer;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .menu-filter:hover {
+            border-color: #203d32;
+        }
+
+        .menu-filter.active {
+            background: #203d32;
+            color: #ffffff;
+            border-color: #203d32;
+        }
+
+        .menu-filter:focus-visible {
+            outline: 3px solid #c85e3b;
+            outline-offset: 3px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 28px;
+            align-items: stretch;
+        }
+
+        .menu-card {
+            min-width: 0;
+            overflow: hidden;
+            border: 1px solid #e5ddd2;
+            border-radius: 18px;
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .menu-card[hidden] {
+            display: none !important;
+        }
+
+        /* FIXED IMAGE DIMENSIONS */
+
+        .menu-card-image {
+            display: block;
+            width: 100%;
+            height: 230px;
+            min-height: 230px;
+            max-height: 230px;
+            object-fit: cover;
+            object-position: center;
+            background: #f1ece4;
+        }
+
+        .menu-card-content {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .menu-card-content h2 {
+            font-size: 1.35rem;
+            margin: 0 0 12px;
+            line-height: 1.4;
+        }
+
+        .menu-card-content p {
+            line-height: 1.7;
+            margin: 0 0 20px;
+            color: #666666;
+        }
+
+        .menu-price {
+            color: #c85e3b;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-top: auto;
+        }
+
+        .menu-category {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #c85e3b;
+            margin-bottom: 10px;
+        }
+
+        .menu-note {
+            margin-top: 35px;
+            color: #666666;
+            line-height: 1.7;
+        }
+
+        .menu-cta {
+            text-align: center;
+            background: #eee7dd;
+            border-radius: 20px;
+            padding: 55px 20px;
+            margin: 65px 0;
+        }
+
+        .menu-cta h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin: 15px 0;
+        }
+
+        .menu-cta p {
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .menu-cta-button {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px 24px;
+            background: #203d32 !important;
+            color: #ffffff !important;
+            border: 1px solid #203d32 !important;
+            border-radius: 9px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .menu-cta-button:hover {
+            background: #162d24 !important;
+        }
+
+        @media (max-width: 900px) {
+
+            .menu-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 22px;
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .menu-intro {
+                padding: 40px 0 20px;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .menu-card-image {
+                height: 230px;
+                min-height: 230px;
+                max-height: 230px;
+            }
+
+            .menu-card-content {
+                padding: 20px;
+            }
+
+            .menu-filters {
+                gap: 8px;
+            }
+
+            .menu-filter {
+                padding: 10px 16px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="site-header">
+
+        <div class="container navbar">
+
+            <a href="index.html" class="logo">
+                Saffron <span>&amp;</span> Stone
+            </a>
+
+            <nav class="nav-links" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">Our Story</a>
+                <a href="menu.html" class="active" aria-current="page">Menu</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+        </div>
+
+    </header>
+
+    <main>
+
+        <!-- Menu Introduction -->
+        <section class="container menu-intro">
+
+            <p class="eyebrow">From our kitchen</p>
+
+            <h1>Our seasonal menu.</h1>
+
+            <p>
+                Discover fresh ingredients, thoughtful
+                preparation, and flavours made to be enjoyed.
+            </p>
+
+        </section>
+
+        <!-- Menu Section -->
+        <section class="container section">
+
+            <!-- Category Filters -->
+            <div class="menu-filters" role="group" aria-label="Filter menu by category">
+
+                <button
+                    type="button"
+                    class="menu-filter active"
+                    data-filter="all"
+                    aria-pressed="true"
+                >
+                    All
+                </button>
+
+                <button
+                    type="button"
+                    class="menu-filter"
+                    data-filter="starters"
+                    aria-pressed="false"
+                >
+                    Starters
+                </button>
+
+                <button
+                    type="button"
+                    class="menu-filter"
+                    data-filter="main"
+                    aria-pressed="false"
+                >
+                    Main Course
+                </button>
+
+                <button
+                    type="button"
+                    class="menu-filter"
+                    data-filter="desserts"
+                    aria-pressed="false"
+                >
+                    Desserts
+                </button>
+
+            </div>
+
+            <!-- Menu Cards -->
+            <div class="menu-grid" id="menu-grid">
+
+                <!-- 1. Garden Fresh Salad -->
+                <article class="menu-card" data-category="starters">
+
+                    <img
+                        src="images/garden-salad.jpg"
+                        alt="Fresh seasonal garden salad with greens and house dressing"
+                        class="menu-card-image"
+                        width="1200"
+                        height="800"
+                        loading="lazy"
+                    >
+
+                    <div class="menu-card-content">
+
+                        <span class="menu-category">Starter</span>
+
+                        <h2>Garden Fresh Salad</h2>
+
+                        <p>
+                            Seasonal greens with a light
+                            house dressing.
+                        </p>
+
+                        <span class="menu-price">₹180</span>
+
+                    </div>
+
+                </article>
+
+                <!-- 2. Garden Herb Pasta -->
+                <article class="menu-card" data-category="main">
+
+                    <img
+                        src="images/fresh-pasta.jpg"
+                        alt="Handcrafted pasta with seasonal vegetables and fresh herbs"
+                        class="menu-card-image"
+                        width="1200"
+                        height="800"
+                        loading="lazy"
+                    >
+
+                    <div class="menu-card-content">
+
+                        <span class="menu-category">Main Course</span>
+
+                        <h2>Garden Herb Pasta</h2>
+
+                        <p>
+                            Handcrafted pasta with seasonal
+                            vegetables and fresh herbs.
+                        </p>
+
+                        <span class="menu-price">₹340</span>
+
+                    </div>
+
+                </article>
+
+                <!-- 3. Stone-Baked Special -->
+                <article class="menu-card" data-category="main">
+
+                    <img
+                        src="images/gourmet%20pizza.jpg"
+                        alt="Stone-baked gourmet pizza with fresh toppings"
+                        class="menu-card-image"
+                        width="1200"
+                        height="800"
+                        loading="lazy"
+                    >
+
+                    <div class="menu-card-content">
+
+                        <span class="menu-category">Main Course</span>
+
+                        <h2>Stone-Baked Special</h2>
+
+                        <p>
+                            Freshly baked with seasonal
+                            toppings and house flavours.
+                        </p>
+
+                        <span class="menu-price">₹390</span>
+
+                    </div>
+
+                </article>
+
+                <!-- 4. Chocolate Delight -->
+                <article class="menu-card" data-category="desserts">
+
+                    <img
+                        src="images/chocolate-dessert.jpg"
+                        alt="Rich chocolate dessert topped with strawberries"
+                        class="menu-card-image"
+                        width="1200"
+                        height="800"
+                        loading="lazy"
+                    >
+
+                    <div class="menu-card-content">
+
+                        <span class="menu-category">Dessert</span>
+
+                        <h2>Chocolate Delight</h2>
+
+                        <p>
+                            A rich chocolate dessert
+                            for sweet moments.
+                        </p>
+
+                        <span class="menu-price">₹190</span>
+
+                    </div>
+
+                </article>
+
+                <!-- 5. Seasonal Chef's Selection -->
+                <article class="menu-card" data-category="main">
+
+                    <img
+                        src="images/chef-preparing.jpg"
+                        alt="Chef preparing a special dish using fresh ingredients"
+                        class="menu-card-image"
+                        width="1200"
+                        height="800"
+                        loading="lazy"
+                    >
+
+                    <div class="menu-card-content">
+
+                        <span class="menu-category">Chef's Special</span>
+
+                        <h2>Seasonal Chef's Selection</h2>
+
+                        <p>
+                            A thoughtfully prepared seasonal
+                            selection inspired by fresh ingredients.
+                        </p>
+
+                        <span class="menu-price">₹420</span>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+            <p class="menu-note">
+                Sample menu and prices created for this educational project.
+            </p>
+
+        </section>
+
+        <!-- Call to Action -->
+        <section class="container">
+
+            <div class="menu-cta">
+
+                <p class="eyebrow">Join us</p>
+
+                <h2>Good food is better when shared.</h2>
+
+                <p>
+                    Have questions about our menu?
+                    We would love to hear from you.
+                </p>
+
+                <a href="contact.html" class="menu-cta-button">
+                    Contact Us
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+
+        <div class="container footer-grid">
+
+            <div>
+
+                <a href="index.html" class="logo">
+                    Saffron <span>&amp;</span> Stone
+                </a>
+
+                <p>
+                    Fresh ingredients. Thoughtful cooking.
+                    Beautiful moments.
+                </p>
+
+            </div>
+
+            <div>
+
+                <h3>Explore</h3>
+
+                <a href="index.html">Home</a>
+                <a href="about.html">Our Story</a>
+                <a href="menu.html">Menu</a>
+                <a href="contact.html">Contact</a>
+
+            </div>
+
+        </div>
+
+        <div class="container footer-bottom">
+
+            <p>
+                &copy; <span id="current-year">2026</span>
+                Saffron &amp; Stone. Educational project.
+            </p>
+
+        </div>
+
+    </footer>
+
+    <script src="js/script.js" defer></script>
+
+    <!-- Menu Filtering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const filterButtons = document.querySelectorAll(".menu-filter");
+            const menuCards = document.querySelectorAll(".menu-card");
+
+            filterButtons.forEach(function (button) {
+
+                button.addEventListener("click", function () {
+
+                    const selectedCategory = button.dataset.filter;
+
+                    // Update active button
+                    filterButtons.forEach(function (filterButton) {
+
+                        filterButton.classList.remove("active");
+                        filterButton.setAttribute("aria-pressed", "false");
+
+                    });
+
+                    button.classList.add("active");
+                    button.setAttribute("aria-pressed", "true");
+
+                    // Filter menu items
+                    menuCards.forEach(function (card) {
+
+                        const cardCategory = card.dataset.category;
+
+                        const shouldShow =
+                            selectedCategory === "all" ||
+                            cardCategory === selectedCategory;
+
+                        card.hidden = !shouldShow;
+
+                    });
+
+                });
+
+            });
+
+            // Automatically update footer year
+            const yearElement = document.getElementById("current-year");
+
+            if (yearElement) {
+                yearElement.textContent = new Date().getFullYear();
+            }
+
+        });
+    </script>
+
+</body>
+</html>

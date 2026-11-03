@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Contact Saffron & Stone and send a reservation inquiry.">
+
+  <title>Contact & Reservations | Saffron & Stone</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="logo" href="index.html">Saffron <span>&</span> Stone</a>
+
+      <button class="nav-toggle" type="button"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+        aria-controls="primary-navigation">☰</button>
+
+      <nav class="nav-links" id="primary-navigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">Our Story</a>
+        <a href="menu.html">Menu</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <section class="page-banner">
+      <div class="container">
+        <span class="eyebrow">We would love to hear from you</span>
+        <h1>Contact & Reservations</h1>
+        <p>Have a question or planning a visit? Get in touch with us.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container two-columns grid">
+
+        <div>
+          <span class="eyebrow">Get in touch</span>
+          <h2>Let's make it memorable.</h2>
+
+          <p class="text-muted">
+            Send us an inquiry, ask a question, or let us
+            know about your upcoming visit.
+          </p>
+
+          <h3>Location</h3>
+          <p>Kolhapur, Maharashtra, India</p>
+
+          <h3>Opening hours</h3>
+          <p>Monday – Sunday: 12 PM – 10 PM</p>
+
+          <h3>Phone</h3>
+          <p>Sample contact details for demonstration</p>
+        </div>
+
+        <div class="card">
+          <div class="card-content">
+
+            <h2 style="font-size: 2rem;">Send an inquiry</h2>
+
+            <p class="text-muted">
+              Fields marked with * are required.
+            </p>
+
+            <form class="form" data-validate-form novalidate>
+
+              <div class="form-group">
+                <label for="name">Full name *</label>
+                <input class="form-control"
+                  type="text"
+                  id="name"
+                  name="name"
+                  autocomplete="name"
+                  minlength="2"
+                  required
+                  aria-describedby="name-error">
+
+                <span class="field-error" id="name-error"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email address *</label>
+                <input class="form-control"
+                  type="email"
+                  id="email"
+                  name="email"
+                  autocomplete="email"
+                  required
+                  aria-describedby="email-error">
+
+                <span class="field-error" id="email-error"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="date">Preferred reservation date</label>
+                <input class="form-control"
+                  type="date"
+                  id="date"
+                  name="date"
+                  aria-describedby="date-error">
+
+                <span class="field-error" id="date-error"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="guests">Number of guests</label>
+                <select class="form-control" id="guests" name="guests">
+                  <option value="1">1 guest</option>
+                  <option value="2" selected>2 guests</option>
+                  <option value="3">3 guests</option>
+                  <option value="4">4 guests</option>
+                  <option value="5">5 guests</option>
+                  <option value="6">6 guests</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Your message *</label>
+                <textarea class="form-control"
+                  id="message"
+                  name="message"
+                  minlength="10"
+                  required
+                  aria-describedby="message-error"></textarea>
+
+                <span class="field-error" id="message-error"></span>
+              </div>
+
+              <p class="text-muted">
+                This is a demonstration form. It validates your
+                information locally but does not send or store it.
+              </p>
+
+              <button class="button button-primary" type="submit">
+                Submit Inquiry
+              </button>
+
+              <div class="form-status"
+                role="status"
+                aria-live="polite"></div>
+
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h2>Saffron & Stone</h2>
+          <p>Thoughtful food, meaningful moments.</p>
+        </div>
+        <div>
+          <h3>Explore</h3>
+          <p><a href="index.html">Home</a></p>
+          <p><a href="about.html">Our Story</a></p>
+          <p><a href="menu.html">Menu</a></p>
+        </div>
+        <div>
+          <h3>Visit Us</h3>
+          <p>Kolhapur, Maharashtra</p>
+          <p>12 PM – 10 PM</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year"></span> Saffron & Stone. Student project.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

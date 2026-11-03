@@ -1,0 +1,404 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Discover the story, philosophy, and passion behind Saffron & Stone.">
+
+    <title>Our Story | Saffron & Stone</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* ABOUT PAGE */
+
+        .about-hero {
+            padding: 65px 0 45px;
+            text-align: center;
+            max-width: 850px;
+        }
+
+        .about-hero h1 {
+            font-size: clamp(2.8rem, 6vw, 5rem);
+            line-height: 1.1;
+            margin: 20px 0;
+        }
+
+        .about-hero p {
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .about-image-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin: 35px auto 70px;
+        }
+
+        .about-image-card {
+            overflow: hidden;
+            border-radius: 18px;
+            background: #eee7dd;
+        }
+
+        .about-image {
+            display: block;
+            width: 100%;
+            height: 320px;
+            max-height: 320px;
+            object-fit: cover;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+            padding: 60px 0;
+        }
+
+        .about-content h2 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            line-height: 1.15;
+            margin: 15px 0;
+        }
+
+        .about-content p {
+            line-height: 1.9;
+            margin-bottom: 18px;
+        }
+
+        .about-values {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+            padding: 45px 0 70px;
+        }
+
+        .about-value-card {
+            padding: 25px;
+            border: 1px solid #e5ddd2;
+            border-radius: 16px;
+            background: #ffffff;
+        }
+
+        .about-value-card h3 {
+            margin-top: 0;
+            font-size: 1.3rem;
+        }
+
+        .about-value-card p {
+            line-height: 1.7;
+        }
+
+        .about-cta {
+            text-align: center;
+            background: #eee7dd;
+            border-radius: 20px;
+            padding: 60px 20px;
+            margin-bottom: 70px;
+        }
+
+        .about-cta h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin: 15px 0;
+        }
+
+        .about-cta p {
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .about-cta-button {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px 24px;
+            background: #203d32 !important;
+            color: #ffffff !important;
+            border: 1px solid #203d32 !important;
+            border-radius: 9px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .about-cta-button:hover {
+            background: #162d24 !important;
+            transform: translateY(-2px);
+        }
+
+        .about-cta-button:focus-visible {
+            outline: 3px solid #c85e3b;
+            outline-offset: 3px;
+        }
+
+        @media (max-width: 800px) {
+
+            .about-image-grid,
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                height: 300px;
+            }
+
+            .about-values {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .about-hero {
+                padding: 40px 0;
+            }
+
+            .about-image {
+                height: 240px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="site-header">
+
+        <div class="container navbar">
+
+            <a href="index.html" class="logo">
+                Saffron <span>&amp;</span> Stone
+            </a>
+
+            <nav class="nav-links" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html" class="active" aria-current="page">Our Story</a>
+                <a href="menu.html">Menu</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+        </div>
+
+    </header>
+
+    <main>
+
+        <!-- Introduction -->
+        <section class="container about-hero">
+
+            <p class="eyebrow">Our story</p>
+
+            <h1>A passion for food.<br>A place to belong.</h1>
+
+            <p>
+                At Saffron &amp; Stone, we believe that great food
+                brings people together. Our approach combines
+                fresh ingredients, thoughtful preparation, and
+                warm hospitality to create memorable experiences.
+            </p>
+
+        </section>
+
+        <!-- Images -->
+        <section class="container about-image-grid">
+
+            <div class="about-image-card">
+
+                <img
+                    src="images/restaurant-interior.jpg"
+                    alt="The welcoming dining space at Saffron and Stone"
+                    class="about-image"
+                    width="1200"
+                    height="800"
+                    fetchpriority="high"
+                >
+
+            </div>
+
+            <div class="about-image-card">
+
+                <img
+                    src="images/chef-preparing.jpg"
+                    alt="Chef carefully preparing fresh food in the kitchen"
+                    class="about-image"
+                    width="1200"
+                    height="800"
+                    loading="lazy"
+                >
+
+            </div>
+
+        </section>
+
+        <!-- Our Philosophy -->
+        <section class="container about-content">
+
+            <div>
+
+                <p class="eyebrow">Our philosophy</p>
+
+                <h2>Good food starts with good ingredients.</h2>
+
+            </div>
+
+            <div>
+
+                <p>
+                    We believe that every memorable dish begins
+                    with quality ingredients and attention to detail.
+                    Our menu celebrates seasonal produce,
+                    carefully selected flavours, and the joy
+                    of sharing a meal.
+                </p>
+
+                <p>
+                    From preparation in the kitchen to the moment
+                    a dish reaches your table, we value care,
+                    consistency, and a welcoming atmosphere.
+                </p>
+
+                <a href="menu.html" class="about-cta-button">
+                    Explore Our Menu →
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- Our Values -->
+        <section class="container">
+
+            <p class="eyebrow">What matters to us</p>
+
+            <h2>Our values</h2>
+
+            <div class="about-values">
+
+                <article class="about-value-card">
+
+                    <h3>Freshness</h3>
+
+                    <p>
+                        We celebrate fresh ingredients
+                        and seasonal flavours in every dish.
+                    </p>
+
+                </article>
+
+                <article class="about-value-card">
+
+                    <h3>Craftsmanship</h3>
+
+                    <p>
+                        Thoughtful preparation and attention
+                        to detail guide our cooking.
+                    </p>
+
+                </article>
+
+                <article class="about-value-card">
+
+                    <h3>Hospitality</h3>
+
+                    <p>
+                        We believe every guest deserves
+                        a warm and welcoming experience.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- Call to Action -->
+        <section class="container">
+
+            <div class="about-cta">
+
+                <p class="eyebrow">Come visit us</p>
+
+                <h2>We look forward to welcoming you.</h2>
+
+                <p>
+                    Discover our seasonal menu
+                    and plan your next dining experience.
+                </p>
+
+                <a href="contact.html" class="about-cta-button">
+                    Contact Us
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+
+        <div class="container footer-grid">
+
+            <div>
+
+                <a href="index.html" class="logo">
+                    Saffron <span>&amp;</span> Stone
+                </a>
+
+                <p>
+                    Fresh ingredients. Thoughtful cooking.
+                    Beautiful moments.
+                </p>
+
+            </div>
+
+            <div>
+
+                <h3>Explore</h3>
+
+                <a href="index.html">Home</a>
+                <a href="about.html">Our Story</a>
+                <a href="menu.html">Menu</a>
+                <a href="contact.html">Contact</a>
+
+            </div>
+
+        </div>
+
+        <div class="container footer-bottom">
+
+            <p>
+                &copy; <span id="current-year">2026</span>
+                Saffron &amp; Stone. Educational project.
+            </p>
+
+        </div>
+
+    </footer>
+
+    <script src="js/script.js" defer></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const year = document.getElementById("current-year");
+
+            if (year) {
+                year.textContent = new Date().getFullYear();
+            }
+
+        });
+    </script>
+
+</body>
+</html>

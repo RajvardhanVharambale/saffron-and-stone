@@ -1,0 +1,553 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Welcome to Saffron & Stone, where fresh ingredients, thoughtful cooking, and warm hospitality create beautiful moments.">
+
+    <title>Saffron & Stone | Home</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* HOME PAGE FIXES */
+
+        .home-hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 50px;
+            padding: 65px 0;
+        }
+
+        .home-hero-content {
+            min-width: 0;
+        }
+
+        .home-hero-content h1 {
+            font-size: clamp(3rem, 6vw, 5.5rem);
+            line-height: 1.08;
+            margin: 25px 0;
+        }
+
+        .home-hero-content > p:not(.eyebrow) {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 600px;
+            margin-bottom: 28px;
+        }
+
+        .home-hero-image {
+            width: 100%;
+            height: 400px;
+            max-height: 400px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 20px;
+            display: block;
+        }
+
+        .home-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 25px;
+        }
+
+        /* All main action buttons green */
+
+        .home-buttons .btn,
+        .philosophy-button,
+        .home-cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #203d32 !important;
+            color: #ffffff !important;
+            border: 1px solid #203d32 !important;
+            padding: 15px 24px;
+            border-radius: 9px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .home-buttons .btn:hover,
+        .philosophy-button:hover,
+        .home-cta-button:hover {
+            background: #162d24 !important;
+            transform: translateY(-2px);
+        }
+
+        .home-buttons .btn:focus-visible,
+        .philosophy-button:focus-visible,
+        .home-cta-button:focus-visible {
+            outline: 3px solid #c85e3b;
+            outline-offset: 3px;
+        }
+
+        /* Featured menu */
+
+        .featured-section {
+            padding: 70px 0;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 25px;
+            margin-top: 35px;
+        }
+
+        .featured-card {
+            overflow: hidden;
+            background: #ffffff;
+            border: 1px solid #e5ddd2;
+            border-radius: 18px;
+        }
+
+        .featured-card-image {
+            display: block;
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+        }
+
+        .featured-card-content {
+            padding: 24px;
+        }
+
+        .featured-card-content h3 {
+            margin: 0 0 12px;
+            font-size: 1.4rem;
+        }
+
+        .featured-card-content p {
+            line-height: 1.7;
+        }
+
+        /* Chef / philosophy section */
+
+        .philosophy-section {
+            padding: 70px 0;
+        }
+
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 45px;
+        }
+
+        .philosophy-image-wrapper {
+            width: 100%;
+            max-width: 520px;
+            margin-inline: auto;
+        }
+
+        .philosophy-image {
+            display: block;
+            width: 100%;
+            height: 330px;
+            max-height: 330px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 18px;
+        }
+
+        .philosophy-content h2 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            line-height: 1.15;
+            margin: 20px 0;
+        }
+
+        .philosophy-content p {
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        /* Final call to action */
+
+        .home-cta {
+            text-align: center;
+            padding: 70px 20px;
+            background: #eee7dd;
+            border-radius: 20px;
+            margin-bottom: 70px;
+        }
+
+        .home-cta h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin: 15px 0;
+        }
+
+        .home-cta p {
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        @media (max-width: 850px) {
+
+            .home-hero {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .home-hero-content h1 {
+                font-size: clamp(3rem, 9vw, 5rem);
+            }
+
+            .home-hero-image {
+                height: 350px;
+            }
+
+            .philosophy-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .home-hero {
+                padding: 40px 0;
+            }
+
+            .home-hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .home-hero-image {
+                height: 250px;
+            }
+
+            .featured-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-card-image {
+                height: 220px;
+            }
+
+            .philosophy-image {
+                height: 240px;
+            }
+
+            .home-buttons {
+                flex-direction: column;
+            }
+
+            .home-buttons .btn {
+                width: 100%;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="site-header">
+
+        <div class="container navbar">
+
+            <a href="index.html" class="logo">
+                Saffron <span>&amp;</span> Stone
+            </a>
+
+            <nav class="nav-links" aria-label="Main navigation">
+                <a href="index.html" class="active" aria-current="page">Home</a>
+                <a href="about.html">Our Story</a>
+                <a href="menu.html">Menu</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+        </div>
+
+    </header>
+
+    <main>
+
+        <!-- Hero Section -->
+        <section class="container home-hero">
+
+            <div class="home-hero-content">
+
+                <p class="eyebrow">Welcome to Saffron &amp; Stone</p>
+
+                <h1>
+                    Good food.<br>
+                    Beautiful moments.
+                </h1>
+
+                <p>
+                    Discover a place where fresh ingredients,
+                    thoughtful cooking, and warm hospitality
+                    come together to create something special.
+                </p>
+
+                <div class="home-buttons">
+
+                    <a href="menu.html" class="btn btn-primary">
+                        Explore Our Menu
+                    </a>
+
+                    <a href="contact.html" class="btn btn-primary">
+                        Reserve a Table
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="home-hero-image-wrapper">
+
+                <img
+                    src="images/restaurant-interior.jpg"
+                    alt="Warm and welcoming restaurant interior at Saffron and Stone"
+                    class="home-hero-image"
+                    width="1200"
+                    height="800"
+                    fetchpriority="high"
+                >
+
+            </div>
+
+        </section>
+
+        <!-- Featured Menu -->
+        <section class="container featured-section">
+
+            <p class="eyebrow">From our kitchen</p>
+
+            <h2>Guest favourites</h2>
+
+            <p>
+                A few favourites from our seasonal menu,
+                prepared fresh and served with care.
+            </p>
+
+            <div class="featured-grid">
+
+                <article class="featured-card">
+
+                    <img
+                        src="images/fresh-pasta.jpg"
+                        alt="Handcrafted pasta with fresh herbs"
+                        class="featured-card-image"
+                        width="1200"
+                        height="800"
+                        loading="lazy"
+                    >
+
+                    <div class="featured-card-content">
+
+                        <h3>Garden Herb Pasta</h3>
+
+                        <p>
+                            Fresh herbs, seasonal vegetables,
+                            and handcrafted pasta.
+                        </p>
+
+                        <strong>₹340</strong>
+
+                    </div>
+
+                </article>
+
+                <article class="featured-card">
+
+                    <img
+                        src="images/garden-salad.jpg"
+                        alt="Fresh seasonal garden salad"
+                        class="featured-card-image"
+                        width="1200"
+                        height="800"
+                        loading="lazy"
+                    >
+
+                    <div class="featured-card-content">
+
+                        <h3>Garden Fresh Salad</h3>
+
+                        <p>
+                            Seasonal greens with a light
+                            house dressing.
+                        </p>
+
+                        <strong>₹180</strong>
+
+                    </div>
+
+                </article>
+
+                <article class="featured-card">
+
+                    <img
+                        src="images/gourmet%20pizza.jpg"
+                        alt="Freshly prepared stone-baked gourmet pizza"
+                        class="featured-card-image"
+                        width="1200"
+                        height="800"
+                        loading="lazy"
+                    >
+
+                    <div class="featured-card-content">
+
+                        <h3>Stone-Baked Special</h3>
+
+                        <p>
+                            Freshly baked with seasonal
+                            toppings and house flavours.
+                        </p>
+
+                        <strong>₹390</strong>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+            <div class="home-buttons">
+
+                <a href="menu.html" class="btn btn-primary">
+                    View Full Menu
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- Chef / Philosophy -->
+        <section class="container philosophy-section">
+
+            <div class="philosophy-grid">
+
+                <div class="philosophy-image-wrapper">
+
+                    <img
+                        src="images/chef-preparing.jpg"
+                        alt="Chef carefully preparing a dish using fresh ingredients"
+                        class="philosophy-image"
+                        width="1200"
+                        height="800"
+                        loading="lazy"
+                    >
+
+                </div>
+
+                <div class="philosophy-content">
+
+                    <p class="eyebrow">Made with care</p>
+
+                    <h2>
+                        Fresh ingredients.
+                        Thoughtful cooking.
+                    </h2>
+
+                    <p>
+                        Every dish begins with quality ingredients
+                        and a passion for creating memorable flavours.
+                        From the first preparation to the final
+                        presentation, we put care into every detail.
+                    </p>
+
+                    <a href="about.html" class="philosophy-button">
+                        Learn About Our Philosophy →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Call to Action -->
+        <section class="container">
+
+            <div class="home-cta">
+
+                <p class="eyebrow">Your table is waiting</p>
+
+                <h2>Make room for something special.</h2>
+
+                <p>
+                    Visit us for a memorable dining experience.
+                </p>
+
+                <a href="contact.html" class="home-cta-button">
+                    Reserve a Table
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+
+        <div class="container footer-grid">
+
+            <div>
+
+                <a href="index.html" class="logo">
+                    Saffron <span>&amp;</span> Stone
+                </a>
+
+                <p>
+                    Fresh ingredients. Thoughtful cooking.
+                    Beautiful moments.
+                </p>
+
+            </div>
+
+            <div>
+
+                <h3>Explore</h3>
+
+                <a href="index.html">Home</a>
+                <a href="about.html">Our Story</a>
+                <a href="menu.html">Menu</a>
+                <a href="contact.html">Contact</a>
+
+            </div>
+
+        </div>
+
+        <div class="container footer-bottom">
+
+            <p>
+                &copy; <span id="current-year">2026</span>
+                Saffron &amp; Stone. Educational project.
+            </p>
+
+        </div>
+
+    </footer>
+
+    <script src="js/script.js" defer></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const year = document.getElementById("current-year");
+
+            if (year) {
+                year.textContent = new Date().getFullYear();
+            }
+
+        });
+    </script>
+
+</body>
+</html>
